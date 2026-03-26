@@ -1,0 +1,23 @@
+seed: 42
+
+data:
+  image_size: 224
+  batch_size: 32
+
+model:
+  image_encoder: "resnet50"
+  text_encoder: "all-MiniLM-L6-v2"
+  fusion_hidden_dim: 512
+  dropout: 0.3
+
+training:
+  lr: 3e-5
+  epochs: 10
+  weight_decay: 0.01
+  early_stopping_patience: 3
+
+loss:
+  pos_weight: 1.5
+
+paths:
+  model_ckpt: "checkpoints/fusion.pt"
